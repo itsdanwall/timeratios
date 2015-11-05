@@ -1,0 +1,71 @@
+---
+title: "Methods Results 5 November"
+author: "Daniel Wall"
+date: "November 5, 2015"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+setwd("/git_repositories/timeratios/wave_26oct/")
+source("load_packages.R")
+rm(list = ls())
+load("analyzed_data/analyzed_data.Rdata")
+```
+
+# Summary
+
+After cleaning the data we had a total of `r n_distinct(pzwhl$responseid)` participants. 
+
+## Items that the participants saw:
+
+Note: These are measured on a 0-100 scale.
+
+### Small ratio change
+
+![alt text](small_ratio_change.png)
+
+### Large ratio change
+
+![alt text](big_ratio_change.png)
+
+# Results
+
+## Multilevel model predicting perceived dissimilarity between the items
+
+I ran a linear multilevel model with varying intercepts for subject. Main effects of ratio dissimilarity type (small or large) `rs` and `rb` in the model, item (adding 0, 10, or 20 days to the initial amount) `item1`, `item2`, `item3` in the model, and their interaction. All variables are dummy coded 
+
+### Anova with type 3 sums of squares
+
+```{r, echo=FALSE}
+Anova(diss_lmer, type = 3)
+```
+
+We see a main effect of ratio dissimilarity type, item, and their interaction. 
+
+### Model Summary
+
+```{r, echo=FALSE}
+summary(diss_lmer)
+```
+
+`diss_typers` is the estimate of large ratio dissimilarity minus the estimate of small ratio dissimilarity, while linearly adjusting for all other effects. 
+
+`item2` is the estimate of the 0 day change in time minus the 10 day increase in time, while linearly adjusting for all other effects. 
+
+### interaction graph for zero type and variance type
+
+The x axis is the perceived dissimilarity between the measures.
+
+```{r, echo=FALSE}
+
+ggplot(eff_df, aes(x = item, y = fit, group = diss_type, color = diss_type)) +
+  geom_line() +
+  geom_errorbar(aes(ymin = lower, ymax = upper))
+
+```
+
+We see no significant change in percieved dissimilarity by adding time to both delays when ratios are small, but a decrease in percieved dissimilarity by adding time to both delays when ratios are large. 
