@@ -1,0 +1,189 @@
+---
+title: "Scholten Read Sanborn"
+author: "Daniel Wall"
+date: "November 12, 2015"
+output: html_document
+runtime: shiny
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(shinyapps)
+library(dplyr)
+```
+
+
+```{r, echo=FALSE}
+prob_dist <- function (p, alpha) {
+  exp(-(-log(p))^alpha)
+}
+
+prob_df <- data.frame(prob = seq(0, 1, .01))
+
+```
+
+## Exponential Discounting
+
+In the exponential discounting model, the decision maker will be indifferent between SS and LL when
+
+$$\delta^{t_S}x_S = \delta^{t_L}x_L$$
+
+
+Where $0 < \delta < 1$ is a one period discount factor and $\rho = 1 - \delta$
+
+One period discount factor, an empiricial measure of discounting over that interval:
+
+$$\delta = (\frac{x_S}{x_L})^{\frac{1}{t_L - t_S}}$$
+
+
+how does the on period discount factor change for different values  of smaller sooner amount/time, and larger later amount/time. 
+
+```{r, echo=FALSE}
+exp_disfac <- function(ssamt, sstime, llamt, lltime) {
+  (ssamt/llamt)^(1/(lltime - sstime))
+}
+
+
+```
+
+
+
+```{r, echo=FALSE}
+inputPanel(
+  sliderInput("ssamt", "Smaller Sooner $", min=0, max = 500, step=5, value= 10),
+    sliderInput("llamt", "Larger Later $", min=0, max = 500, step=5, value= 20),
+  sliderInput("sstime", "Smaller Sooner time", min=0, max = 365, step=1, value= 1),
+    sliderInput("lltime", "Larger Later time", min=0, max = 365, step=1, value= 2)
+
+  )
+
+renderPrint({
+exp_disfac(input$ssamt, input$sstime, input$llamt, input$lltime) 
+
+  
+})
+
+```
+
+# Hyperbolic
+
+
+According to Loewenstein and Prelec’s (1992) hyperbolic discounting model, the deci-
+sion maker will be indifferent between SS and LL when 
+
+$$d(t_S)v(x_S) = d(t_L)v(x_L)$$
+
+where v is a reference-dependent value function, and d is a generalized hyperbolic dis- count function:
+
+$$d(t) = (1 + \tau t)^{-\beta/\tau}$$
+
+where $\beta > 0$ is delay discounting, and $\tau > 0$ is the departure from exponential discounting. As $\tau$ goes to 0, the generalized hyperbolic discount function reduces to the exponential discount function $d(t)\exp^{-\beta t} = \delta^t$. The hyperbolic discounting model predicts the common difference effect. To see this, the total discounting over the interval tS ? tL can be expressed in the form of a discount **fraction**. 
+
+__So discount fraction is different than discount factor__
+
+
+$$\frac{v(x_S)}{v(x_L)} = (\frac{1+\tau t_S}{1+\tau t_L}) ^{\beta/\tau} = (\frac{1+\tau t_S}{1 + \tau t_S + \tau(t_L-t_x)}) ^{\beta /\tau}$$
+
+
+```{r}
+hyp_disfrac <- function(sstime, lltime, beta, tau) {
+  sstime <- as.numeric(sstime)
+  lltime <- as.numeric(lltime)
+  beta <- as.numeric(beta)
+  tau <- as.numeric(tau)
+  
+  ((1 + tau * sstime)/(1 + tau * sstime + tau *(lltime - sstime))) ^(beta/tau)
+}
+
+hyp_disfrac(0, 1, .1, .1)
+```
+
+
+```{r, echo=FALSE}
+inputPanel(
+  textInput("sstime", "Smaller Sooner time"),
+  textInput("lltime", "Larger Later time"),
+  textInput("beta", "beta > 0 delay"),
+  textInput("tau", "tau > departure from exponential discounting")
+  )
+
+renderPrint({
+hyp_disfrac(input$sstime, input$lltime, input$beta, input$tau)
+
+  
+})
+
+```
+
+
+The value function has 5 properties. First three from Prospect theory
+
+1. Reference Dependence
+2. Diminishing Sensitivity
+3. Loss aversion
+
+2 additional dealing with elasticity of value function or the ratio between the proportional change in value and the proportional change in amount
+
+$$\epsilon = \frac{v' (x)/v(x)}{1/x}$$
+
+4. Increasing elasticity. For constant proportional increases of x > 0 (decreases of x < 0), v(x) increases (decreases) by increasing proportional amounts. Therefore, if outcome magnitude is increased by a common multiplicative constant, the ratio between the values of xS and xL decreases
+
+5. Loss amplification. Elasticity is greater for losses than for gains. That is, decreasing x < 0 by a given proportion yields a greater propor- tional change in value than increasing x > 0 by the same proportion
+
+
+```{r}
+hyp_val <- function(x, gamma, lambda, mu, sigma) {
+  # x <- as.numeric(x)
+  if (x >= 0) {
+    (1 - gamma) * x^(1-gamma) + (mu *gamma * x) ^ gamma
+  } else if (x < 0) {
+    -lambda*((1-gamma)*(-x) ^(1-gamma) + (mu + sigma)*gamma*(-x)^gamma)
+  } 
+}
+
+hyp_val <- function(x, gamma, lambda, mu, sigma) {
+  # x <- as.numeric(x)
+  ifelse(x >= 0,(1 - gamma) * x^(1-gamma) + (mu *gamma * x) ^ gamma, -lambda*((1-gamma)*(-x) ^(1-gamma) + (mu + sigma)*gamma*(-x)^gamma))
+  
+}
+
+hyp_val_df <- data.frame(x = -1000:1000)
+
+hyp_val_df %>% rowwise %>% mutate(value = hyp_val(x, 1, 1, 1, 1))
+hyp_val(-10, 1, 1, 1, 1)
+
+```
+
+where ½< c < 1 is diminishing absolute sensitivity to outcomes, l > 0 is increasing elasticity, k > 1 is loss aversion, and r > 0 is loss amplification
+
+
+
+```{r, echo=FALSE}
+inputPanel(
+  sliderInput("gamma", "gamma diminishing absolute sensitivity to outcomes",  min=.1, max = .99, step=.001, value= .1),
+  sliderInput("lambda", "Lambda loss aversion",  min=1, max = 4, step=.001, value= .1),
+  sliderInput("mu", "mu  increasing elasticity",  min=.1, max = .99, step=.001, value= .1),
+  sliderInput("sigma", "sigma loss amplification",  min=.1, max = .99, step=.001, value= .1)
+  )
+
+
+renderPlot({
+  hyp_val_df$lambda <- input$lambda
+  hyp_val_df$sigma <- input$sigma
+  hyp_val_df$mu <- input$mu
+  hyp_val_df$gamma <- input$gamma
+  
+  hyp_val_df <- transform(hyp_val_df, value = hyp_val(x, gamma, lambda, mu, sigma))
+  
+  ggplot(hyp_val_df, aes(x = x, y = value, group = 1)) +
+    geom_line() +
+    geom_abline(intercept = 0, slope=0) +
+    geom_vline(xintercept = 0) +
+    xlab("Outcome") +
+    ylab("Value") +
+    xlim(c(-1000, 1000))
+})
+
+
+
+```
