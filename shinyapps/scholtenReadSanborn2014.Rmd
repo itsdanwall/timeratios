@@ -42,8 +42,6 @@ how does the on period discount factor change for different values  of smaller s
 exp_disfac <- function(ssamt, sstime, llamt, lltime) {
   (ssamt/llamt)^(1/(lltime - sstime))
 }
-
-
 ```
 
 
@@ -51,18 +49,14 @@ exp_disfac <- function(ssamt, sstime, llamt, lltime) {
 ```{r, echo=FALSE}
 inputPanel(
   sliderInput("ssamt", "Smaller Sooner $", min=0, max = 500, step=5, value= 10),
-    sliderInput("llamt", "Larger Later $", min=0, max = 500, step=5, value= 20),
+  sliderInput("llamt", "Larger Later $", min=0, max = 500, step=5, value= 20),
   sliderInput("sstime", "Smaller Sooner time", min=0, max = 365, step=1, value= 1),
-    sliderInput("lltime", "Larger Later time", min=0, max = 365, step=1, value= 2)
-
+  sliderInput("lltime", "Larger Later time", min=0, max = 365, step=1, value= 2)
   )
 
 renderPrint({
 exp_disfac(input$ssamt, input$sstime, input$llamt, input$lltime) 
-
-  
 })
-
 ```
 
 # Hyperbolic
@@ -185,5 +179,62 @@ renderPlot({
 })
 
 
+
+```
+
+
+## The interval discounting model: A hybrid evaluation rule 
+
+uses the value function hyperbolic
+
+Interval discount function:
+
+$$D(t_S, t_L) = (1 + \alpha (\frac{w(t_L) - w(t_S)}{\vartheta})^{\vartheta})^{-\beta/\alpha}$$
+
+
+```{r}
+w_t <- function (t, tau) {
+  t <- as.numeric(t)
+  tau <- as.numeric(tau)
+  (1/tau) * log(1 + tau*t)
+}
+
+int_fn <- function(sstime, lltime, alpha, theta, beta, tau) {
+
+  sstime <- as.numeric(sstime)
+  lltime <- as.numeric(lltime)
+  alpha <- as.numeric(alpha)
+  theta <- as.numeric(theta)
+  beta <- as.numeric(beta)
+  
+  (1 + alpha * ((w_t(lltime) - w_t(sstime))/theta)^theta) ^(-beta/alpha)
+}
+
+
+int_df <- data.frame(int_len = 0:100)
+
+int_df1 <- int_df %>%
+  mutate(sstime =,
+         lltime,
+         alpha,
+         theta,
+         beta)
+
+```
+
+
+```{r, echo=FALSE}
+inputPanel(
+  textInput("inton", "Interval onset"),
+  textInput("intlen", "Larger Later time"),
+  textInput("beta", "beta > 0 delay"),
+  textInput("tau", "tau > departure from exponential discounting")
+  )
+
+renderPrint({
+hyp_disfrac(input$sstime, input$lltime, input$beta, input$tau)
+
+  
+})
 
 ```
