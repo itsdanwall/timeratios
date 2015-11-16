@@ -187,3 +187,86 @@ renderPlot({
 
 
 ```
+
+
+## Tradeoff model
+
+attribute-based evaluation rule, in which the outcome advantage of one
+option is weighted against the time advantage of the other, and the option with the great- est advantage is chosen.
+
+These advantages are differences between weighted delays, w(tL) ? w(tS), or the effective interval (as in the interval discounting model), and differences between valued outcomes,
+$v(x_L) - v(x_S)$ for $x_L > x_S > 0$ and $v(x_S) - v(x_L)$ for $x_L < x_S < 0$, or the effective compensation. The effective interval and the effective compensation are weighted against one another by a tradeoff function Q. 
+
+
+                
+$$\begin{equation}
+ Q(w(t_L) - w(t_S)) = 
+    \begin{cases}
+      v(x_L) - v(x_S), & \text{if}\ x_L > x_S > 0 \\
+      v(x_S) - v(x_L), & \text{if}\ 0 > x_S > x_L
+    \end{cases}
+  \end{equation}$$
+
+Analogous to the time-weighing function, the trade- off model has a normalized logarithmic value function:
+
+$$\begin{equation}
+ v(x) = 
+    \begin{cases}
+      \frac{1}{\gamma}\log(1+\gamma x), & \text{if}\ x > 0 \\
+      -\frac{\lambda}{\gamma}  \log(1+\gamma (-x)), & \text{if}\ x < 0
+    \end{cases}
+  \end{equation}$$
+
+
+
+where $\gamma > 0$ is diminishing absolute sensitivity to outcomes. Like the normalized expo- nential value function discussed by K
+obberling and Wakker (2005), the value function in
+Eq. 10 approaches constant sensitivity (unit elasticity) as $\gamma$ goes to 0 (linear value func- tion), approaches insensitivity (zero elasticity) as $\gamma$ goes to infinity (zero value function), and is decreasingly elastic otherwise, spanning the entire range from unit elasticity (as x goes to 0) to zero elasticity (as x goes to infinity)
+
+
+```{r}
+to_val_fn <- function(x, gamma, lambda) {
+  x <- as.numeric(x)
+  gamma <- as.numeric(gamma)
+  lambda <- as.numeric(lambda)
+  
+  ifelse(x >= 0, 
+         (1/gamma) * log(1 + gamma * x),
+         -(lambda/gamma) * log(1+gamma*(-x)))
+}
+
+```
+
+
+
+```{r}
+inputPanel(
+  sliderInput("gamma_to", "gamma diminishing absolute sensitivity to outcomes",  min=.01, max = .99, step=.001, value= .1),
+  sliderInput("lambda_to", "Lambda loss aversion", value = 1,  min=1, max = 4, step = .05)
+)
+
+
+renderPlot({
+  to_val_df <- data.frame(x = -100:100)
+  to_val_df$lambda <- input$lambda_to
+  to_val_df$gamma <- input$gamma_to
+  
+
+
+  to_val_df <- mutate(to_val_df, value = to_val_fn(x, gamma, lambda))
+  
+  ggplot(to_val_df, aes(x = x, y = value, group = 1)) +
+    geom_line() +
+    geom_abline(intercept = 0, slope=0) +
+    geom_vline(xintercept = 0) +
+    xlab("Outcome") +
+    ylab("Value") +
+    xlim(c(-100, 100))
+})
+```
+
+
+The tradeoff fucntion weighs effective intervals against effective compensations
+
+$$Q(t_S, t_L) = \frac{\kappa}{\alpha} \log
+\left(1 + \alpha \left(\frac{w(t_L) - w(t_S)}{\vartheta}\right)^{\vartheta}\right)$$
