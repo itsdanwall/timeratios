@@ -199,42 +199,59 @@ w_t <- function (t, tau) {
   (1/tau) * log(1 + tau*t)
 }
 
-int_fn <- function(sstime, lltime, alpha, theta, beta, tau) {
+int_fn <- function(int_len, int_onset, alpha, theta, beta, tau) {
 
-  sstime <- as.numeric(sstime)
-  lltime <- as.numeric(lltime)
+  int_len <- as.numeric(int_len)
+  int_onset <- as.numeric(int_onset)
   alpha <- as.numeric(alpha)
   theta <- as.numeric(theta)
   beta <- as.numeric(beta)
   
-  (1 + alpha * ((w_t(lltime) - w_t(sstime))/theta)^theta) ^(-beta/alpha)
+  sstime <- int_onset
+  lltime <- sstime + int_len
+  
+  (1 + alpha * ((w_t(lltime, tau) - w_t(sstime, tau))/theta)^theta) ^(-beta/alpha)
 }
 
 
-int_df <- data.frame(int_len = 0:100)
+int_df <- data.frame(int_len = 1:100)
 
 int_df1 <- int_df %>%
-  mutate(sstime =,
-         lltime,
-         alpha,
-         theta,
-         beta)
+  mutate(int_onset = 1, 
+         alpha = .1, theta = .1, beta = .1, tau = .1)
+
+mutate(int_df1, delta = int_fn(int_len, int_onset, alpha, theta, beta, tau))
 
 ```
 
 
 ```{r, echo=FALSE}
 inputPanel(
-  textInput("inton", "Interval onset"),
-  textInput("intlen", "Larger Later time"),
-  textInput("beta", "beta > 0 delay"),
-  textInput("tau", "tau > departure from exponential discounting")
+  sliderInput("inton", "Interval onset", min=0, max = 365, step=1, value= 10),
+  sliderInput("alpha", "alpha > 0 subadditivity", min=.01, max = 2, step=.05, value= 0),
+  sliderInput("beta", "beta > 0 delay", min=0, max = 1, step=.05, value= .5),
+  sliderInput("theta", "theta > 1 superadditive", min=1, max = 3, step=.05, value= 1),
+  sliderInput("tau", "tau > 0 diminishing absolute sensitivity", min=.001, max = 1, step=.05, value= .01)
   )
 
-renderPrint({
-hyp_disfrac(input$sstime, input$lltime, input$beta, input$tau)
-
+renderPlot({
+  int_df$inton <- input$inton
+  int_df$alpha <- input$alpha
+  int_df$beta <- input$beta
+  int_df$theta <- input$theta
+  int_df$tau <- input$tau
   
+  int_df <- transform(int_df, delta = int_fn(int_len, inton, alpha, theta, beta, tau))
+  
+    int_df <- transform(int_df, daily = delta ^ (1/int_len))
+  
+  ggplot(int_df, aes(x = int_len, y = daily, group = 1)) +
+    geom_line() +
+#     geom_abline(intercept = 0, slope=0) +
+#     geom_vline(xintercept = 0) +
+#     xlab("Outcome") +
+#     ylab("Value") +
+    ylim(c(0, 1))
 })
 
 ```
