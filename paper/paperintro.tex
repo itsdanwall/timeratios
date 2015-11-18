@@ -1,0 +1,77 @@
+\documentclass[]{article}
+
+%opening
+\title{An exploration of how ratios affect time}
+\author{Daniel Wall}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+
+When presented with a choice between receiving A) \$10 in 5 days or receiving B) \$12 in 7 days, there are a large number of calculations you could perform to decide which to choose.  Alternative based theories -- such as exponential and hyperbolic discounting -- posit that you calculate a discounted utility for each option. Whereas other models posit that people make attribute based comparisons meaning that they compare the money and time amounts to one another. 
+
+\subsection{Exponential Discounting}
+
+The exponential discounting function is  
+\begin{equation}\ref{eq:exp}
+	\delta_{exp} = \exp^{-rt}
+\end{equation}
+
+
+Where $\delta$ is the discount fraction which each monetary amount is multiplied by and $r$ is the exponential discount rate. And the utlility of an option is:
+
+\begin{equation}\ref{eq:utilalt}
+	U(x, t) = x \delta
+\end{equation}
+
+
+
+ If the daily exponential discount rate is .01 then the current value of A) Would be $\$10 * \exp^{-.01*5} = 9.5$ and the current value of B) would be $\$12 * \exp^{-.01*7} = 11.19$
+
+From \cite{@Toubia2014} we can get the probability of choosing larger later from the following formula
+
+\begin{equation}\label{eq:pll}
+	P_{LL} = \frac{\exp(U_{LL})}{\exp(U_{LL})+ \exp(U_{SS})}
+\end{equation}
+
+
+Using this formula we get the following probability of choosing larger later $\frac{11.19}{11.19+9.5} = .54$
+
+One of the empirical regularities in intertemporal choice research is that impatience decreases when times are moved away from the present. The exponential model, however, does not account for this phenomenon. For instance if we added 100 days to both A and B yeilding C) \$10 in 105 days and D) \$ 12 in 107 days the utility of C would be $3.5$ and the utility of D would be $4.11$. Plugging into equation \ref{eq:pll} we get $.54$, the same answer we saw before. 
+
+\subsection{Hyperbolic}
+
+Hyperbolic discounting has been shown to account for decreasing impatience
+
+\begin{equation}\label{eq:hyp}
+\delta_{hyp} = \frac{1}{1+kt}
+\end{equation}
+
+Where $k$ is the hyperbolic discount rate, and the utility of the option is found by equation \ref{eq:utilatt}.
+
+Assuming daily $k = .01$, for choice A) \ref{eq:hyp} we get $\delta_A = \frac{1}{1+.01*5} = .952$ meaning the utility is $9.52$ and for B) the utility is $11.21$ which yields a larger later probability of $.541$. When we look at the larger later probabilities for C and D we get, 4.88 and  5.79 yielding a larger later value of $.543$. There's an increase in the likelihood of choosing the larger later option when both options are moved into the future, this is known as diminishing impatience. 
+
+The hyperbolic and exponential models both predict that people make alternative based transitions; however recent models have shown that people make attribute based transitions
+
+\cite{@Loewenstein1991} 
+
+\subsection{ITCH}
+
+Marzilli Ericson and colleagues showed that fully attribute based models can predict out of sample choices better than alternative based models. 
+According to ITCH the probability of choosing larger later is
+
+\begin{equation}\label{eq:itch}
+	P(LL) = L \left(\beta_I + \beta_{xA}(x_2 - x_1) + \beta_{xR} \frac{x_2 - x_1}{x^*} + \beta_{tA}(t_2 - t_1) + \beta_{tR} \frac{t_2 - t_1}{t^*}\right)
+\end{equation}
+
+In the paper they give the example parameters for each of the coefficients of 0, .1, .1. -.1, -.1. Using these coefficients in \ref{eq:itch} for A compared to B the probability of choosing larger later would be $.496$, whereas for C and D the probability of choosing larger later would be $.504$
+
+
+\end{document}

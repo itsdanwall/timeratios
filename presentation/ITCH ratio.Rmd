@@ -1,0 +1,92 @@
+---
+title: "ITCH Predictions"
+author: "Daniel Wall"
+date: "November 17, 2015"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+From @MarzilliEricson2015
+
+According to ITCH the probability of choosing larger later is
+
+
+$$P(LL) = L \left(\beta_I + \beta_{xA}(x_2 - x_1) + \beta_{xR} \frac{x_2 - x_1}{x^*} + \beta_{tA}(t_2 - t_1) + \beta_{tR} \frac{t_2 - t_1}{t^*}\right)$$
+
+
+Where $x^* = (x_1 + x_2)/2$
+
+
+The function below calculates the probability that a participant will choose larger later.  
+```{r}
+p_ll <- function(beta_intercept, beta_xa, beta_xr, beta_ta, beta_tr, x1, x2, t1, t2) {
+  x_rat <- (x2 - x1)/ ((x2 + x1)/2)
+  t_rat <- (t2 - t1)/ ((t2 + t1)/2)
+  reg <- beta_intercept + beta_xa*(x2 - x1) + beta_xr*(x_rat) + 
+    beta_ta*(t2 - t1) + beta_tr*(t_rat)
+  plogis(reg)
+} 
+```
+
+
+To confirm that it is right let's use the example from the paper
+
+```
+Consider the following concrete example. If the par- ticipant uses weights (0.0, 0.1, 0.1, −0.1, −0.1) and selects between $10 today and $20 tomorrow, then the probabil- ity of choosing the later option is .68
+```
+
+```{r}
+p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 20, 0, 1)
+```
+
+
+
+The function appears to be working
+
+
+
+Let's see what is says for our example of $10 in 5 days and $11 in 6 days
+
+
+
+
+```{r}
+p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 5, 6)
+
+```
+
+
+Now if we add 5 days to both 
+
+
+```{r}
+
+p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 10, 11)
+
+```
+
+
+$P_{LL}^{10, 11}$   from the $P_{LL}^{5, 6}$ `r p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 10, 11) - p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 5, 6)`.
+
+
+
+Now if we use $10 in 5 days and $11 in 15 days'
+
+
+```{r}
+p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 5, 15)
+
+```
+
+Now by adding 5 days to each
+
+```{r}
+p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 10, 20)
+
+```
+
+When subtracting the $P_{LL}^{10, 20}$   from the $P_{LL}^{5, 15}$ we get `r p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 10, 20) - p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 5, 15)`
+
+So ITCH would predict that the there would be a small  difference in decreasing impatience between the two scenarios. I think we weren't accounting for the difference earlier today. 

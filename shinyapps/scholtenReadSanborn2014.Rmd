@@ -2,7 +2,10 @@
 title: "Scholten Read Sanborn"
 author: "Daniel Wall"
 date: "November 12, 2015"
-output: html_document
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
 runtime: shiny
 ---
 
@@ -22,7 +25,7 @@ prob_df <- data.frame(prob = seq(0, 1, .01))
 
 ```
 
-## Exponential Discounting
+# Exponential Discounting
 
 In the exponential discounting model, the decision maker will be indifferent between SS and LL when
 
@@ -183,7 +186,7 @@ renderPlot({
 ```
 
 
-## The interval discounting model: A hybrid evaluation rule 
+# The interval discounting model: A hybrid evaluation rule 
 
 uses the value function hyperbolic
 
@@ -257,7 +260,7 @@ renderPlot({
 ```
 
 
-## Tradeoff model
+# Tradeoff model
 
 attribute-based evaluation rule, in which the outcome advantage of one
 option is weighted against the time advantage of the other, and the option with the great- est advantage is chosen.
