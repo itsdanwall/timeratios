@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.6)  30 NOV 2015 10:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.6)  30 NOV 2015 16:21
 entering extended mode
 **paperintro.tex
 (C:\git_repositories\timeratios\paper\paperintro.tex
@@ -49,9 +49,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 10.
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
  [1
 
 {C:/Users/DanWall/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
@@ -66,35 +63,27 @@ Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
  [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 76.
+(Font)              <7> on input line 86.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 76.
+(Font)              <5> on input line 86.
 
 
-LaTeX Warning: Reference `eq:exp' on page 3 undefined on input line 76.
+LaTeX Warning: Citation `@Toubia2014' on page 3 undefined on input line 101.
 
-
-LaTeX Warning: Reference `eq:utilalt' on page 3 undefined on input line 83.
-
-
-LaTeX Warning: Citation `@Toubia2014' on page 3 undefined on input line 91.
-
-
-LaTeX Warning: Reference `eq:utilalt' on page 3 undefined on input line 110.
-
-[3] [4] [5] [6] (C:\git_repositories\timeratios\paper\paperintro.aux)
+[3] [4] [5] [6] [7] [8] [9]
+(C:\git_repositories\timeratios\paper\paperintro.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 245 strings out of 493921
- 2826 string characters out of 3147277
- 54031 words of memory out of 3000000
- 3611 multiletter control sequences out of 15000+200000
+ 246 strings out of 493921
+ 2832 string characters out of 3147277
+ 55031 words of memory out of 3000000
+ 3612 multiletter control sequences out of 15000+200000
  8502 words of font info for 30 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 23i,6n,17p,521b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 23i,6n,21p,598b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTe
@@ -107,9 +96,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on paperintro.pdf (6 pages, 172420 bytes).
+Output written on paperintro.pdf (9 pages, 190080 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

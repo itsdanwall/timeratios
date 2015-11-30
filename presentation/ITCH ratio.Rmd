@@ -91,3 +91,5 @@ p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 10, 20)
 When subtracting the $P_{LL}^{10, 20}$   from the $P_{LL}^{5, 15}$ we get `r p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 10, 20) - p_ll(0.0, 0.1, 0.1, −0.1, −0.1, 10, 11, 5, 15)`
 
 So ITCH would predict that the there would be a small  difference in decreasing impatience between the two scenarios. I think we weren't accounting for the difference earlier today. 
+
+

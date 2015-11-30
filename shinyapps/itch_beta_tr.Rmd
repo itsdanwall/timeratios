@@ -1,0 +1,122 @@
+---
+title: "ITCH_shiny"
+author: "Daniel Wall"
+date: "November 30, 2015"
+output: html_document
+runtime: shiny
+---
+
+```{r,echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+
+From @MarzilliEricson2015
+
+According to ITCH the probability of choosing larger later is
+
+
+$$P(LL) = L \left(\beta_I + \beta_{xA}(x_2 - x_1) + \beta_{xR} \frac{x_2 - x_1}{x^*} + \beta_{tA}(t_2 - t_1) + \beta_{tR} \frac{t_2 - t_1}{t^*}\right)$$
+
+
+Where $x^* = (x_1 + x_2)/2$
+
+
+The function below calculates the probability that a participant will choose larger later.  
+
+```{r}
+p_ll <- function(beta_intercept, beta_xa, beta_xr, beta_ta, beta_tr, x1, x2, t1, t2) {
+  x_rat <- (x2 - x1)/ ((x2 + x1)/2)
+  t_rat <- (t2 - t1)/ ((t2 + t1)/2)
+  reg <- beta_intercept + beta_xa*(x2 - x1) + beta_xr*(x_rat) + 
+    beta_ta*(t2 - t1) + beta_tr*(t_rat)
+  plogis(reg)
+} 
+```
+
+
+
+```{r, echo=FALSE}
+inputPanel(
+  sliderInput("beta_xa", "beta_xa",  min=.01, max = .99, step=.001, value= .1),
+  sliderInput("beta_xr", "beta_xr",  min=.01, max = .99, step=.001, value= .1),
+  sliderInput("beta_ta", "beta_ta",  min= -1, max = 0, step=.001, value= -.1),
+  sliderInput("ssamnt", "ssamnt", value = 1,  min=0, max = 100, step = 1),
+  sliderInput("sstime", "sstime",  value = 1,  min=0, max = 100, step = 1),
+  sliderInput("llamnt", "llamnt", value = 2,  min=0, max = 100, step = 1),
+  sliderInput("lltime", "lltime",  value = 10,  min=0, max = 100, step = 1)
+)
+
+
+renderPlot({
+  itch_val_df <- data.frame(beta_tr = seq(-1, 0, by = .001))
+  itch_val_df$beta_xa <- input$beta_xa
+  itch_val_df$beta_xr <- input$beta_xr
+  itch_val_df$beta_ta <- input$beta_ta
+  itch_val_df$ssamnt <- input$ssamnt  
+  itch_val_df$sstime <- input$sstime
+  itch_val_df$llamnt <- input$llamnt
+  itch_val_df$lltime <- input$lltime
+  
+
+
+  itch_val_df <- mutate(itch_val_df, p_ll = p_ll(0.0, beta_xa, beta_xr, beta_ta, beta_tr, ssamnt, llamnt, sstime, lltime))
+  
+
+  
+  ggplot(itch_val_df, aes(x = beta_tr, y = p_ll, group = 1)) +
+    geom_line() +
+    xlab("beta_tr") +
+    ylab("probability of choosing larger later")
+})
+
+```
+
+
+
+
+
+
+
+
+
+wireframe
+
+```{r}
+inputPanel(
+  sliderInput("beta_xa2", "beta_xa2",  min=.01, max = .99, step=.001, value= .1),
+  sliderInput("beta_xr2", "beta_xr2",  min=.01, max = .99, step=.001, value= .1),
+  sliderInput("ssamnt2", "ssamnt2", value = 1,  min=0, max = 100, step = 1),
+  sliderInput("sstime2", "sstime2",  value = 1,  min=0, max = 100, step = 1),
+  sliderInput("llamnt2", "llamnt2", value = 2,  min=0, max = 100, step = 1),
+  sliderInput("lltime2", "lltime2",  value = 10,  min=0, max = 100, step = 1)
+)
+
+
+renderPlot({
+  itch_val_df2 <- data.frame(beta_tr = seq(-1, 0, by = .001),
+                            beta_ta = seq(-1, 0, by = .001))
+
+  itch_val_df2$beta_xa <- input$beta_xa2
+  itch_val_df2$beta_xr <- input$beta_xr2
+  itch_val_df2$ssamnt <- input$ssamnt2  
+  itch_val_df2$sstime <- input$sstime2
+  itch_val_df2$llamnt <- input$llamnt2
+  itch_val_df2$lltime <- input$lltime2
+  
+
+
+  itch_val_df2 <- mutate(itch_val_df2, p_ll = p_ll(0.0, beta_xa, beta_xr, beta_ta, beta_tr, ssamnt, llamnt, sstime, lltime))
+  
+
+  
+  ggplot(itch_val_df, aes(x = beta_tr, y = p_ll, group = 1)) +
+    geom_line() +
+    xlab("beta_tr") +
+    ylab("probability of choosing larger later")
+})
+```
+
+
+
