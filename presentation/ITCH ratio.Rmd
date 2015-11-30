@@ -20,6 +20,7 @@ Where $x^* = (x_1 + x_2)/2$
 
 
 The function below calculates the probability that a participant will choose larger later.  
+
 ```{r}
 p_ll <- function(beta_intercept, beta_xa, beta_xr, beta_ta, beta_tr, x1, x2, t1, t2) {
   x_rat <- (x2 - x1)/ ((x2 + x1)/2)

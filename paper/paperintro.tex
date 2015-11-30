@@ -1,7 +1,7 @@
 \documentclass[]{article}
 
 %opening
-\title{An exploration of how ratios affect time}
+\title{An exploration of how ratios affect time discounting}
 \author{Daniel Wall}
 
 
@@ -10,16 +10,78 @@
 \maketitle
 
 \begin{abstract}
-
+	People use ratios in everyday life. 
+	Current models of intertemporal choice posit that people calculate ratios of both money and time. 
+	These models account for diminishing impatience -- when items are moved into the future, people are more patient. 
+	Specifically we manipulate the size of ratios between times and show that although some models predict that the degree of diminishing impatience will be larger when the difference between the ratio of times is large, we show that these models underestimate the size of this effect. 
+	By modifying a model of ITC we show a better fit for our data. 
+	This better fit leads to novel predictions for how to optimally frame intertemporal choices to induce either patience or impatience. 
 \end{abstract}
 
 \section{Introduction}
+
+
+A large portion of our daily decisions involve making decisions involving time in some respect, often taking the form of a the tradeoff between receiving something of smaller value now and receiving something of larger value in the future. 
+For instance when a consumer selects a shipping speed when shopping online they are making an intertemporal choice.
+These decisions require consumers to, perhaps implicitly, calculate how much waiting for the slower shipping speed is worth.  
+
+
+ Firms could have differing preferences on whether a consumer is impatient or patient when choosing a shipping speed. 
+ If a firm’s inventory is low on a particular item they may not profit from the extra cost that it takes to expedite shipping, however if their inventory is high they may want to nudge consumers to ship their items faster. 
+ It is important to understand what variables consumers are using and how they are making intertemporal choices to create robust and adaptive choice environments. 
+This understanding how to optimally display information leads to novel predictions for how to display shipping speeds. 
+
+Recent models of intertemporal choice have posited that people use ratios in intertemporal choices [ITCH, DRIFT]. 
+Across ___ studies we show that how people make intertemporal choices is dependent on how they perceive ratios. 
+Further we show that by making the ratios between times explicit we can induce a higher reliance on ratios. 
+Depending on the ratio we can make choices more or less patient 
+
+\section{Ratios and Intertemporal Choices}
+
+
+Ratios are ubiquitous in the modern world and are paramount in disparate fields from the stock market to baking. 
+When making inferences from ratios, people are biased in predictable ways.
+For instance, Yamagishi showed that ratios with large numerators and denominators are perceived to be riskier than ratios with small numerators and denominators. Further, Reyna and Brainerd argued that people overweight numerators compared to denominators.
+
+Recent models of intertemporal choice have posited that people use ratios in intertemporal choices [ITCH, DRIFT]. 
+An example intertemporal choice is choosing between \$5 in 1 day and \$6 in 5 days. 
+The ITCH model would predict that participants calculate differences between and ratios of both the dollar amounts and the times. 
+If people are biased in calculating ratios for everyday items, it follows that they would be biased in calculating ratios in intertemporal choices. 
+
+One of the empirical regularities in intertemporal choice research is that impatience decreases when times are moved away from the present.
+If we took the above example and moved both options back by 20 days we would see more patient responses. 
+Multiple explanations for this phenomenon -- known as decreasing impatience -- have been marshaled. 
+
+Zauberman showed that taking into account subjective perceptions of time can account for decreasing impatience. 
+For instance they find that the subjective time perception of 1 year is not different from the subjective time perception of 3 years. 
+Further subjective time perception was shown to follow a psychophysical logarithmic function. Zauberman, however, embedded this subjective time perception into a hyperbolic discounting function – an alternative based discounting function.  
+
+Beyond accounting for diminishing impatience subjective time perception can account for subadditive discounting. 
+Read (2001) found that intertemporal choices are intransitive, specifically “discounting over a delay is greater when the delay is divided into subintervals than when it is left undivided”. 
+However, Zauberman showed that participants perceive the total time horizon as longer when it is divided into subintervals than when it is not divided. 
+Further participants discounted more when the delay was divided into subintervals than when it was undivided. 
+
+
+
+The focus of this paper is on how people calculate ratios specifically about time. 
+We hypothesize that the ratio change in times alters the extent of decreasing impatience. 
+We begin with a review of the current discounting models and how they account for decreasing impatience. 
+Further we will show that while some models predict that ratio change will have an effect on decreasing impatience, that none of the models predict effects as large as we see. 
+These results introduce a phenomenon whose extent is not captured by the current discounting models. 
+They show that the properties of the numbers given can alter patience via their ratio. 
+Moreover recent models of intertemporal choice do not properly predict the degree of decreasing impatience properly, we show that our modification to their model does a better job of predicting choices. 
+ 
+
+
+
+\section{Discounting Models}
 
 When presented with a choice between receiving A) \$10 in 5 days or receiving B) \$12 in 7 days, there are a large number of calculations you could perform to decide which to choose.  Alternative based theories -- such as exponential and hyperbolic discounting -- posit that you calculate a discounted utility for each option. Whereas other models posit that people make attribute based comparisons meaning that they compare the money and time amounts to one another. 
 
 \subsection{Exponential Discounting}
 
 The exponential discounting function is  
+
 \begin{equation}\ref{eq:exp}
 	\delta_{exp} = \exp^{-rt}
 \end{equation}
@@ -35,7 +97,7 @@ Where $\delta$ is the discount fraction which each monetary amount is multiplied
 
  If the daily exponential discount rate is .01 then the current value of A) Would be $\$10 * \exp^{-.01*5} = 9.5$ and the current value of B) would be $\$12 * \exp^{-.01*7} = 11.19$
 
-From \cite{@Toubia2014} we can get the probability of choosing larger later from the following formula
+From \cite{@Toubia2014} Toubia 2014 we can get the probability of choosing larger later from the following formula
 
 \begin{equation}\label{eq:pll}
 	P_{LL} = \frac{\exp(U_{LL})}{\exp(U_{LL})+ \exp(U_{SS})}
@@ -54,13 +116,17 @@ Hyperbolic discounting has been shown to account for decreasing impatience
 \delta_{hyp} = \frac{1}{1+kt}
 \end{equation}
 
-Where $k$ is the hyperbolic discount rate, and the utility of the option is found by equation \ref{eq:utilatt}.
+Where $k$ is the hyperbolic discount rate, and the utility of the option is found by equation \ref{eq:utilalt}.
 
 Assuming daily $k = .01$, for choice A) \ref{eq:hyp} we get $\delta_A = \frac{1}{1+.01*5} = .952$ meaning the utility is $9.52$ and for B) the utility is $11.21$ which yields a larger later probability of $.541$. When we look at the larger later probabilities for C and D we get, 4.88 and  5.79 yielding a larger later value of $.543$. There's an increase in the likelihood of choosing the larger later option when both options are moved into the future, this is known as diminishing impatience. 
 
 The hyperbolic and exponential models both predict that people make alternative based transitions; however recent models have shown that people make attribute based transitions
 
-\cite{@Loewenstein1991} 
+
+
+\subsubsection{Subjective Time Perception}
+
+Zauberman showed that peoples subjective perception of time can account for hyperbolic discounting. 
 
 \subsection{ITCH}
 
@@ -71,7 +137,82 @@ According to ITCH the probability of choosing larger later is
 	P(LL) = L \left(\beta_I + \beta_{xA}(x_2 - x_1) + \beta_{xR} \frac{x_2 - x_1}{x^*} + \beta_{tA}(t_2 - t_1) + \beta_{tR} \frac{t_2 - t_1}{t^*}\right)
 \end{equation}
 
-In the paper they give the example parameters for each of the coefficients of 0, .1, .1. -.1, -.1. Using these coefficients in \ref{eq:itch} for A compared to B the probability of choosing larger later would be $.496$, whereas for C and D the probability of choosing larger later would be $.504$
+In the paper they give the example parameters for each of the coefficients of 0, .1, .1. -.1, -.1. Using these coefficients in equation \ref{eq:itch} for A compared to B the probability of choosing larger later would be $.496$, whereas for C and D the probability of choosing larger later would be $.504$
 
+
+\subsection{Discounting By Intervals}
+
+\begin{equation}\label{eq:int}
+	D(t_S, t_L) = \left(1 + \alpha \left(\frac{w(t_L) - w(t_S)}{\vartheta}\right)^{\vartheta}\right)^{-\beta/\alpha}
+\end{equation}
+
+
+\subsection{Trade-off model}
+
+% %\begin{equation}
+% %Q(w(t_L) - w(t_S)) = 
+% %\begin{cases}
+% %v(x_L) - v(x_S), & \text{if}\ x_L > x_S > 0 \\
+% %v(x_S) - v(x_L), & \text{if}\ 0 > x_S > x_L
+% %\end{cases}
+% %\end{equation}
+
+\subsection{Summary}
+Taken together these models show that some models predict that a large ratio change will have more decreasing impatience than a small ratio change; however we posit that the degree of  decreasing impatience will be larger when the ratio change is small compared to when it is large.
+Take the following two choices for example $SS_{sr}$ = \$10 in 5 days and $LL_{sr}$ = \$12 in 6 days and $SS_{lr}$ = \$10 in 5 days and $LL_{lr}$ = \$12 in 10 days. Where $SS_{sr}$ stands for the smaller sooner option for the small time ratio. 
+If we add 5 days to both items they would now be $SS_{sr}^{del}$ = \$10 in 10 days and $LL_{sr}^{del}$ = \$12 in 11 days and $SS_{lr}^{del}$ = \$10 in 10 days and $LL_{lr}^{del}$ = \$12 in 15 days. 
+
+[Insert a table about the degree of decreasing impatience for each model here]
+
+\section{Time Ratio Model (TRaM)}
+
+We propose a new model of ITC which can account for the degree of decreasing impatience based on the ratios of time. 
+We begin with a verbal description of our model
+
+\subsection{An example of TRM}
+
+When presented with a choice between \$5 in 1 day and \$10 in 5 days. 
+A TRM decision maker would look at the two delays and calcluate their ratio. 
+Then they will use a rule of thumb to say how much relative compensation they need to account for that ratio. Below is an example of a TRM decision maker
+The time is 5 times as long therefore I will need 3 times as much money. 
+
+If people use this heuristic then the ratio between times becomes important. 
+If we move both options up by five days then the ratio between times becomes $10/6$ = 1.66. A participant using the TRM heuristic would say that 
+The larger later time is about 1.5 times as long as the smaller sooner time therefore I need 1.25 times as much money. 
+
+
+\section{Study 1}
+
+In study 1 we will test this prediction of the degree of decreasing impatience depending on the change in ratio.
+
+\subsection{Methods}
+Participants were either given 8 choices with either a small or large time ratio which was moved into the future by 5 days. 
+
+In condition 1 participants were given 8 intertemporal choices however the focal questions were 
+\$10 in 5 days or \$11 in 6 days
+and 
+\$10 in 10 days or \$11 in 11 days
+
+In condition 1 participants were given 8 intertemporal choices however the focal questions were 
+\$10 in 5 days or \$11 in 6 days
+and 
+\$10 in 10 days or \$11 in 11 days
+
+In condition 2 participants were given 8 intertemporal choices and the focal questions were 
+\$10 in 5 days or \$11 in 15 days
+and 
+\$10 in 10 days or \$11 in 20 days
+
+
+\subsubsection{Participants}
+
+
+\subsubsection{Results}
+
+We calculated the daily discount fraction for each of the four focal items while controlling for the participants discount fraction from the other 6 items. 
+The degree of decreasing impatience was calculated by taking the difference between the daily discount fraction from the two focal items. 
+We ran a multilevel linear regression predicting the degree of decreasing impatience with condition and discount fraction of the other items as predictors. 
+
+The regression showed that the degree of decreasing impatience was predicted by condition.  
 
 \end{document}
