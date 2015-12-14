@@ -1,5 +1,10 @@
 \documentclass[]{article}
 
+%\usepackage{cogsci}
+\usepackage{pslatex}
+\usepackage{apacite}
+\usepackage{graphicx}
+\usepackage{booktabs,caption,fixltx2e}
 %opening
 \title{An exploration of how ratios affect time discounting}
 \author{Daniel Wall}
@@ -10,8 +15,10 @@
 \maketitle
 
 \begin{abstract}
-	Choices involving time, intertemporal choices, are ubiquitous -- for instance choosing a shipping speed for your latest Amazon order. 
-	Further, people use ratios in everyday life -- intertemporal choices are no different, 
+	When selecting our shipping speed on Amazon we are faced with a choice between getting our package sooner but paying more money, or getting our package later and paying less money. 
+	This phenomenon -- known as intertemporal choice is the subject of this paper.
+%	Choices involving time, intertemporal choices, are ubiquitous -- for instance choosing a shipping speed for your latest Amazon order. 
+	People use ratios in everyday life -- intertemporal choices are no different, 
 	recent cognitive models of intertemporal choice show that people calculate ratios of both money and time. 
 	These models account for diminishing impatience -- when items are moved into the future, people are more patient. 
 	Our goal is twofold: 1) to show that previous models of intertemporal choice do not properly account for temporal ratios and present a conceptual model of time discounting, and  2) by explicitly manipulating how people use ratios of time, we can alter how people make intertemporal choices. 
@@ -22,16 +29,22 @@
 
 \section{Introduction}
 
+All of us have felt the itch to get the new purchase we made on Amazon as quickly as possible. 
+Sometimes that itch may lead to us choosing to expedite our shipping at considerable cost. 
+There are subtle ways in which the presentation of time can alter patience. 
+For instance people are more impatient when delays are calendar dates as opposed to delays into the future \cite{Read2005}. 
+Marketers have used temporal frames in shipping scenarios.
+For example as opposed to stating that you will receive your package in 2 weeks, Amazon sometimes states that you receive your package on January 23rd. 
+As per \citeA{Read2005} this frame will increase patience. 
 
-Many of our daily choices involve making decisions involving time in some respect, often taking the form of a the tradeoff between receiving something of smaller value now and receiving something of larger value in the future. 
-For instance when a consumer selects a shipping speed when shopping online they are making an intertemporal choice.
-These decisions require consumers to, perhaps implicitly, calculate how much waiting for the slower shipping speed is worth.  
+%Many of our daily choices involve making decisions involving time in some respect, often taking the form of a the tradeoff between receiving something of smaller value now and receiving something of larger value in the future. 
+%For instance when a consumer selects a shipping speed when shopping online they are making an intertemporal choice.
+%These decisions require consumers to, perhaps implicitly, calculate how much waiting for the slower shipping speed is worth.  
 
-
-Firms could have differing preferences on whether a consumer is impatient or patient when choosing a shipping speed. 
+Firms could, however, prefer that a consumer is impatient when choosing a shipping speed. 
 If a firm's inventory is low on a particular item they may not profit from the extra cost that it takes to expedite shipping, however if their inventory is high they may want to nudge consumers to ship their items faster. 
 It is important to understand what variables consumers are using and how they are making intertemporal choices to create robust and adaptive choice environments. 
-This understanding how to optimally display information leads to novel predictions for how to display shipping speeds. 
+This understanding how to optimally display information leads to novel predictions for how to frame shipping speeds. 
 
 Recent models of intertemporal choice have posited that people use ratios in intertemporal choices [ITCH, DRIFT]. 
 Across [] studies we show that how people make intertemporal choices is dependent on how they perceive ratios. 
@@ -329,9 +342,73 @@ We find that participants are more likely to delay their shipping in the implici
 Study 4 shows that temporal ratios are an important driver of real world shipping choices. 
 By making temporal ratios explicit, people are more likely to be patient. 
 
+\section{Study}
+
+\subsection{Methods}
+
+\subsubsection{Participants}
+
+Ninety three Rutgers students took part in this study as a part of their course requirements. 
+
+\subsubsection{Design}
+
+Participants were randomly assigned to one of two conditions -- small ratios between times and large ratios between times.  
+As seen in Table~\ref{tab:stimuli}, 24 unique intertemporal choices were created. 
+The first column shows the first two times, the third column shows the delay added to both of the first two columns which yeild columns 4 and 5. 
+The $SS_{amnt}$ and $LL_{amnt}$ columns were chosen using intuition to generate half of the participants choosing the smaller sooner option and half choosing the larger later option. 
+The last column indicates the condition which participants saw, e.g. small ratio versus large ratio change
+
+\begin{table}[!htbp] \centering 
+	\caption{Stimuli Used for Study \_ } \label{tab:stimuli}
+\begin{tabular}{ | l | l | l | l | l | l | l | l | }
+	\hline
+	$SS_{time}$ & $LL_{time}$ & delay & $SS_{time}^{delay}$ & $LL_{time}^{delay}$ & $SS_{amnt}$ & $LL_{amnt}$ & Ratio Change \\ \hline
+	5 & 6 & 5 & 10 & 11 & 105 & 106 & Small  \\ \hline
+	7 & 9 & 17 & 24 & 26 & 122 & 127 & Small  \\ \hline
+	10 & 14 & 14 & 24 & 28 & 144 & 149 & Small  \\ \hline
+	1 & 2 & 5 & 6 & 7 & 170 & 171 & Small  \\ \hline
+	20 & 25 & 22 & 42 & 47 & 108 & 114 & Small  \\ \hline
+	15 & 20 & 25 & 40 & 45 & 140 & 144 & Small  \\ \hline
+	5 & 15 & 5 & 10 & 20 & 105 & 106 & Large \\ \hline
+	7 & 21 & 17 & 24 & 38 & 122 & 127 & Large \\ \hline
+	10 & 22 & 14 & 24 & 36 & 144 & 149 & Large \\ \hline
+	1 & 10 & 5 & 6 & 15 & 170 & 171 & Large \\ \hline
+	20 & 40 & 22 & 42 & 62 & 108 & 114 & Large \\ \hline
+	15 & 75 & 25 & 40 & 100 & 140 & 144 & Large \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Procedure}
+
+Participants initially granted informed consent. 
+Then were randomly selected to be in one of the two conditions Small or Large ratio change. 
+Participants then made ``unlikeness'' judgments between each set of times in their condition. 
+Furhter, non-delayed and delayed times were blocked together the order in which the questions were asked and the order in which the blocks were presented was randomized. 
+The blocking of items was to minimize the likelihood that participants saw items in the same row of Table~\ref{tab:stimuli} consecutively. 
+For instance a participant in the small ratio change condition answered how unlike each  the 6 non-delayed times were then answered the how unlike eachother each of the 6 delayed times were. 
+
+Participants then completed an unrelated task about buying cars, which will not be reported further.
+
+Next particpants answered each of the intertemporal choices in theri condition. 
+The intertemporal choices were blocked similarly to the unlikeness judgments. 
+Next participants were asked the extent to which they used ratios and the extent to which they used differences when making intertemporal choices. 
+Finally participants answered demographics questions. 
+
+\subsection{Results}
+
 \section{General Discussion}
 
 Across four studies we show temporal ratios are an important driver of temporal choice. 
 This importance has been understated by previous models of intertemporal choice, and by explicitly expressing temporal ratios people are more impatient. 
+
+
+\section{Limitations and Future Directions}
+
+\bibliographystyle{apacite}
+
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+
+\bibliography{C://git_repositories/intertemporal_uncertainty/paper/library}
 
 \end{document}

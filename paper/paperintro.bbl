@@ -1,0 +1,39 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Read%
+, Frederick%
+, Orsel%
+\BCBL {}\ \BBA {} Rahman%
+}{%
+Read%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2005}}%
+}]{%
+Read2005}
+\APACinsertmetastar {%
+Read2005}%
+\begin{APACrefauthors}%
+Read, D.%
+, Frederick, S.%
+, Orsel, B.%
+\BCBL {}\ \BBA {} Rahman, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Four Score and Seven Years from Now: The Date/Delay
+  Effect in Temporal Discounting}} {{Four Score and Seven Years from Now: The
+  Date/Delay Effect in Temporal Discounting}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Management Science}{51}{9}{1326--1335}.
+\newblock
+\begin{APACrefURL}
+  \url{http://pubsonline.informs.org/doi/abs/10.1287/mnsc.1050.0412}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1287/mnsc.1050.0412} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
