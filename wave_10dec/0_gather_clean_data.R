@@ -61,7 +61,8 @@ disssum <- dissc %>%
 
 ggplot(disssum, aes(x = ratcng, y = mean_diffcng)) +
   geom_point() +
-  geom_errorbar(aes(ymin = lower, ymax = upper))
+  geom_errorbar(aes(ymin = lower, ymax = upper)) +
+  ylab("Difference between not delayed and delayed intervals")
   
 # mixed effects model
 diss_lmer <- lmer(diss_diff ~ ratcng + (1|responseid),
@@ -87,20 +88,48 @@ itc <- timerat[, str_detect(names(timerat), "^(responseid|itc\\d+_\\d+)")] %>%
   group_by(responseid) %>%
     merge(diss_id, by = c("ss_time", "ll_time"))
   
-  
+#summarise and plot the data
 itc_sum <- itc %>%
   group_by(diss_set, delayed) %>%
   summarise(n_ll = sum(value == "2"),
             n_tot = n()) %>%
   mutate(per_ll = n_ll/n_tot) %>%
   group_by(diss_set, delayed) %>%
-  do( tidy(prop.test(.$n_ll, .$n_tot)))
+  do( tidy(prop.test(.$n_ll, .$n_tot))) %>%
+  ungroup %>%
+  mutate(diss_set = factor(diss_set),
+         delayed = factor(delayed))
 
 
 ggplot(itc_sum,
-       aes(x = diss_set, y = estimate, group = delayed, ymax = conf.high,  ymin = conf.low)) +
+       aes(x = diss_set, y = estimate, group = delayed, fill = delayed, 
+           ymax = conf.high,  ymin = conf.low)) +
   geom_bar(stat="identity", position = "dodge") +
+  ylab("Percent Larger Later") +
   geom_errorbar(position = "dodge")
   
+
+# now lets run a model on this
+itc <- itc %>%
+  mutate(value = factor(value),
+         diss_set = factor(diss_set),
+         delayed = factor(delayed))
+
+itc_lmer <- glmer(value ~ diss_set * delayed + (1|responseid),
+                  itc, family = "binomial")
+
+summary(itc_lmer)
+
+itc_eff <- Effect(c("diss_set",  "delayed"), itc_lmer) %>%
+  as.data.frame()
+
+ggplot(itc_eff, aes(x = diss_set, y = fit, group = delayed,
+                    fill = delayed,
+                    ymin = lower, ymax = upper)) +
+  geom_bar(stat="identity", position = "dodge") +
+  geom_errorbar(position = "dodge") +
+  ylab("Logistic Regression Coefficient")
+
+
 
 save.image("analyzed_data/analyzed_data.Rdata")

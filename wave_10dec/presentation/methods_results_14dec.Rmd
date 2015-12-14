@@ -1,0 +1,96 @@
+---
+title: "Methods and Results 14 December 2015"
+author: "Daniel Wall"
+date: "December 14, 2015"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+setwd("/git_repositories/timeratios/wave_10dec/")
+source("load_packages.R")
+rm(list = ls())
+
+load("analyzed_data/analyzed_data.Rdata")
+# opts_chunk$set(echo=FALSE) 
+```
+
+
+# Summary
+
+We are trying to see if diminishing impatience increases to a greater exetent when ratios change a lot. 
+
+
+# Unlikeness scores
+
+We want to see a bigger change in perceived differences between items when the ratio change is large as compared to small.
+
+I subtracted the not delayed onset from the delayed onset. 
+
+## Mean and CI of differences 
+
+```{r, echo=FALSE}
+ggplot(disssum, aes(x = ratcng, y = mean_diffcng)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = lower, ymax = upper)) +
+  ylab("Difference between not delayed and delayed intervals")
+  
+```
+
+## Model predicting change in unlikeness
+
+```{r, echo=FALSE}
+Anova(diss_lmer, type = 3)
+summary(diss_lmer)
+```
+
+### Plot of effects
+
+```{r, echo=FALSE}
+ggplot(eff_df, aes(x = ratcng, y = fit)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = lower, ymax = upper))
+```
+
+
+# Intertemporal choices 
+
+We want there to be a large ratio change in diminishing impatience for the large ratio change as compared to the small ratio change.
+
+## Graph of mean percent larger later
+
+```{r, echo=FALSE}
+
+ggplot(itc_sum,
+       aes(x = diss_set, y = estimate, group = delayed, fill = delayed, 
+           ymax = conf.high,  ymin = conf.low)) +
+  geom_bar(stat="identity", position = "dodge") +
+  ylab("Percent Larger Later") +
+  geom_errorbar(position = "dodge")
+  
+```
+
+
+## Logistic regression predicting choices
+
+```{r, echo=FALSE}
+Anova(itc_lmer, type=3)
+summary(itc_lmer)
+```
+
+### Effects plot from logistic regression 
+
+```{r, echo=FALSE}
+ggplot(itc_eff, aes(x = diss_set, y = fit, group = delayed,
+                    fill = delayed,
+                    ymin = lower, ymax = upper)) +
+  geom_bar(stat="identity", position = "dodge") +
+  geom_errorbar(position = "dodge") +
+  ylab("Logistic Regression Coefficient")
+
+```
+
+
