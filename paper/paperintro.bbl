@@ -64,6 +64,88 @@ Hardisty, D\BPBI J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Johnson%
+, Payne%
+\BCBL {}\ \BBA {} Atlas%
+}{%
+Johnson%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+Johnson2011}
+\APACinsertmetastar {%
+Johnson2011}%
+\begin{APACrefauthors}%
+Johnson, E\BPBI J.%
+, Payne, J\BPBI W.%
+\BCBL {}\ \BBA {} Atlas, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+\APACrefbtitle {{Time preferences, mortgage choice and strategic default}.}
+  {{Time preferences, mortgage choice and strategic default}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Li%
+}{%
+Li%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+Li2008}
+\APACinsertmetastar {%
+Li2008}%
+\begin{APACrefauthors}%
+Li, X.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The Effects of Appetitive Stimuli on Out‐of‐Domain
+  Consumption Impatience}} {{The Effects of Appetitive Stimuli on
+  Out‐of‐Domain Consumption Impatience}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Consumer Research}{34}{5}{649--656}.
+\newblock
+\begin{APACrefDOI} \doi{10.1086/521900} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+MacKillop%
+\ \protect \BOthers {.}}{%
+MacKillop%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+MacKillop2011}
+\APACinsertmetastar {%
+MacKillop2011}%
+\begin{APACrefauthors}%
+MacKillop, J.%
+, Amlung, M\BPBI T.%
+, Few, L\BPBI R.%
+, Ray, L\BPBI a.%
+, Sweet, L\BPBI H.%
+\BCBL {}\ \BBA {} Munaf{\`{o}}, M\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Delayed reward discounting and addictive behavior: A
+  meta-analysis}} {{Delayed reward discounting and addictive behavior: A
+  meta-analysis}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychopharmacology}{216}{3}{305--321}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s00213-011-2229-0} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Magen%
 , Dweck%
 \BCBL {}\ \BBA {} Gross%
@@ -125,6 +207,30 @@ MarzilliEricson2015}%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1177/0956797615572232} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Meier%
+\ \BBA {} Sprenger%
+}{%
+Meier%
+\ \BBA {} Sprenger%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+Meier2009}
+\APACinsertmetastar {%
+Meier2009}%
+\begin{APACrefauthors}%
+Meier, S.%
+\BCBT {}\ \BBA {} Sprenger, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+\APACrefbtitle {{Present-Biased Preferences and Credit Card Borrowing}.}
+  {{Present-Biased Preferences and Credit Card Borrowing}.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -224,6 +330,66 @@ Read, D.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1037/a0029177} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Scholten%
+\ \BBA {} Read%
+}{%
+Scholten%
+\ \BBA {} Read%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+Scholten2006}
+\APACinsertmetastar {%
+Scholten2006}%
+\begin{APACrefauthors}%
+Scholten, M.%
+\BCBT {}\ \BBA {} Read, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Discounting by intervals : a generalized model of
+  intertemporal choice.}} {{Discounting by intervals : a generalized model of
+  intertemporal choice.}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{May 2015}{}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1287/mnsc.1060.0534}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1287/mnsc.1060.0534} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Thaler%
+\ \BBA {} Shefrin%
+}{%
+Thaler%
+\ \BBA {} Shefrin%
+}{%
+{\protect \APACyear {1981}}%
+}]{%
+Thaler1981}
+\APACinsertmetastar {%
+Thaler1981}%
+\begin{APACrefauthors}%
+Thaler, R\BPBI H.%
+\BCBT {}\ \BBA {} Shefrin, H\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1981}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{An Economic Theory of Self-Control}} {{An Economic
+  Theory of Self-Control}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Political Economy}{89}{2}{392}.
+\newblock
+\begin{APACrefDOI} \doi{10.1086/260971} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
