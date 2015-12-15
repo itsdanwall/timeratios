@@ -1,6 +1,162 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Hardisty%
+, Appelt%
+\BCBL {}\ \BBA {} Weber%
+}{%
+Hardisty%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Hardisty2013}
+\APACinsertmetastar {%
+Hardisty2013}%
+\begin{APACrefauthors}%
+Hardisty, D\BPBI J.%
+, Appelt, K\BPBI C.%
+\BCBL {}\ \BBA {} Weber, E\BPBI U.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Good or Bad , We Want it Now : Fixed-cost Present Bias
+  for Gains and Losses Explains Magnitude Asymmetries in Intertemporal Choice}}
+  {{Good or Bad , We Want it Now : Fixed-cost Present Bias for Gains and Losses
+  Explains Magnitude Asymmetries in Intertemporal Choice}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Behavioral Decision Making}{361}{July
+  2012}{348--361}.
+\newblock
+\begin{APACrefDOI} \doi{10.1002/bdm} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hardisty%
+\ \BBA {} Pfeffer%
+}{%
+Hardisty%
+\ \BBA {} Pfeffer%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+Hardisty2015}
+\APACinsertmetastar {%
+Hardisty2015}%
+\begin{APACrefauthors}%
+Hardisty, D\BPBI J.%
+\BCBT {}\ \BBA {} Pfeffer, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Intertemporal Uncertainty Avoidance: When the Future is
+  Uncertain, People Prefer the Present, and When the Present is Uncertain,
+  People Prefer the Future}} {{Intertemporal Uncertainty Avoidance: When the
+  Future is Uncertain, People Prefer the Present, and When the Present is
+  Uncertain, People Prefer the Future}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Management Science}{53}{}{160}.
+\newblock
+\begin{APACrefDOI} \doi{10.1017/CBO9781107415324.004} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Magen%
+, Dweck%
+\BCBL {}\ \BBA {} Gross%
+}{%
+Magen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+Magen2008}
+\APACinsertmetastar {%
+Magen2008}%
+\begin{APACrefauthors}%
+Magen, E.%
+, Dweck, C\BPBI S.%
+\BCBL {}\ \BBA {} Gross, J\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The Hidden-Zero Effect}} {{The Hidden-Zero
+  Effect}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Science}{19}{7}{648--649}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Marzilli Ericson}%
+, White%
+, Laibson%
+\BCBL {}\ \BBA {} Cohen%
+}{%
+{Marzilli Ericson}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+MarzilliEricson2015}
+\APACinsertmetastar {%
+MarzilliEricson2015}%
+\begin{APACrefauthors}%
+{Marzilli Ericson}, K\BPBI M.%
+, White, J\BPBI M.%
+, Laibson, D.%
+\BCBL {}\ \BBA {} Cohen, J\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Money Earlier or Later? Simple Heuristics Explain
+  Intertemporal Choices Better Than Delay Discounting Does}} {{Money Earlier or
+  Later? Simple Heuristics Explain Intertemporal Choices Better Than Delay
+  Discounting Does}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological Science}{}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{http://pss.sagepub.com/lookup/doi/10.1177/0956797615572232}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1177/0956797615572232} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Paolacci%
+, Chandler%
+\BCBL {}\ \BBA {} Ipeirotis%
+}{%
+Paolacci%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+Paolacci2010}
+\APACinsertmetastar {%
+Paolacci2010}%
+\begin{APACrefauthors}%
+Paolacci, G.%
+, Chandler, J.%
+\BCBL {}\ \BBA {} Ipeirotis, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Running experiments on amazon mechanical turk}}
+  {{Running experiments on amazon mechanical turk}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Judgment and Decision making}{5}{5}{411--419}.
+\newblock
+\begin{APACrefURL} \url{http://repub.eur.nl/pub/31983} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Read%
 , Frederick%
 , Orsel%
@@ -34,6 +190,67 @@ Read, D.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1287/mnsc.1050.0412} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Read%
+, Frederick%
+\BCBL {}\ \BBA {} Scholten%
+}{%
+Read%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Read2013}
+\APACinsertmetastar {%
+Read2013}%
+\begin{APACrefauthors}%
+Read, D.%
+, Frederick, S.%
+\BCBL {}\ \BBA {} Scholten, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{mar}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{DRIFT: an analysis of outcome framing in intertemporal
+  choice.}} {{DRIFT: an analysis of outcome framing in intertemporal
+  choice.}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of experimental psychology. Learning, memory,
+  and cognition}{39}{2}{573--88}.
+\newblock
+\begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/22866891}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1037/a0029177} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Urminsky%
+\ \BBA {} Zauberman%
+}{%
+Urminsky%
+\ \BBA {} Zauberman%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+Zauberman2014}
+\APACinsertmetastar {%
+Zauberman2014}%
+\begin{APACrefauthors}%
+Urminsky, O.%
+\BCBT {}\ \BBA {} Zauberman, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The Psychology of Intertemporal Preferences}} {{The
+  Psychology of Intertemporal Preferences}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Handbook of Judgment and Decision Making} {Handbook of
+  judgment and decision making}\ (\BPGS\ 1--50).
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
