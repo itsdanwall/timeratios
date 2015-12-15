@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.6)  15 DEC 2015 12:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.6)  15 DEC 2015 14:34
 entering extended mode
 **paperintro.tex
 (C:\git_repositories\timeratios\paper\paperintro.tex
@@ -194,11 +194,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 )
-(C:\git_repositories\timeratios\paper\paperintro.aux
-
-LaTeX Warning: Label `tab:stimuli' multiply defined.
-
-)
+(C:\git_repositories\timeratios\paper\paperintro.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
@@ -208,7 +204,8 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 18.
 LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 18
 .
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    ... okay on input line 18.
@@ -304,28 +301,45 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 
 {C:/Users/DanWall/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
  [2] [3]
 <Stimuli_For_Study.pdf, id=18, 845.1575pt x 597.23125pt>
 File: Stimuli_For_Study.pdf Graphic file (type pdf)
 
 <use Stimuli_For_Study.pdf>
-Package pdftex.def Info: Stimuli_For_Study.pdf used on input line 187.
+Package pdftex.def Info: Stimuli_For_Study.pdf used on input line 201.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
 
-Overfull \hbox (194.72543pt too wide) in paragraph at lines 187--188
+Overfull \hbox (194.72543pt too wide) in paragraph at lines 201--202
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 149.47476pt on input line 188.
+LaTeX Warning: Float too large for page by 149.47476pt on input line 202.
 
 [4 <C:/git_repositories/timeratios/paper/Stimuli_For_Study.pdf, page is rotated
- 90 degrees>]
+ 90 degrees>] <study1_implicit.png, id=27, 224.63925pt x 56.00925pt>
+File: study1_implicit.png Graphic file (type png)
+
+<use study1_implicit.png>
+Package pdftex.def Info: study1_implicit.png used on input line 207.
+(pdftex.def)             Requested size: 224.63869pt x 56.0091pt.
+
+<study1_explicit.png, id=29, 218.0145pt x 54.80475pt>
+File: study1_explicit.png Graphic file (type png)
+
+<use study1_explicit.png>
+Package pdftex.def Info: study1_explicit.png used on input line 213.
+(pdftex.def)             Requested size: 218.01395pt x 54.8046pt.
+ [5
+
+
+ <C:/git_repositories/timeratios/paper/study1_implicit.png> <C:/git_repositorie
+s/timeratios/paper/study1_explicit.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -335,12 +349,9 @@ Missing character: There is no œ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no  in font ptmr7t!
- [5
 
 
-]
-
-LaTeX Warning: Citation `@Toubia2014' undefined on input line 266.
+LaTeX Warning: Citation `@Toubia2014' undefined on input line 320.
 
 [6] [7] [8] [9] [10] (C:\git_repositories\timeratios\paper\paperintro.bbl
 Missing character: There is no â in font ptmr7t!
@@ -349,20 +360,17 @@ Missing character: There is no  in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no  in font ptmr7t!
-)
-[11] (C:\git_repositories\timeratios\paper\paperintro.aux)
+
+[11]) [12] (C:\git_repositories\timeratios\paper\paperintro.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 3673 strings out of 493921
- 55067 string characters out of 3147277
- 120072 words of memory out of 3000000
- 6919 multiletter control sequences out of 15000+200000
+ 3683 strings out of 493921
+ 55283 string characters out of 3147277
+ 116072 words of memory out of 3000000
+ 6926 multiletter control sequences out of 15000+200000
  39194 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,10n,38p,598b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -375,9 +383,9 @@ ier/ucrr8a.pfb><C:/Users/DanWall/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/sym
 bol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperintro.pdf (11 pages, 153404 bytes).
+Output written on paperintro.pdf (12 pages, 162323 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
