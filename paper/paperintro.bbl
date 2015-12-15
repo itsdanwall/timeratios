@@ -1,6 +1,44 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Bickel%
+, Pitcock%
+, Yi%
+\BCBL {}\ \BBA {} Angtuaco%
+}{%
+Bickel%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+Bickel2009}
+\APACinsertmetastar {%
+Bickel2009}%
+\begin{APACrefauthors}%
+Bickel, W\BPBI K.%
+, Pitcock, J\BPBI A.%
+, Yi, R.%
+\BCBL {}\ \BBA {} Angtuaco, E\BPBI J\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Congruence of BOLD response across intertemporal choice
+  conditions: fictive and real money gains and losses.}} {{Congruence of BOLD
+  response across intertemporal choice conditions: fictive and real money gains
+  and losses.}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of neuroscience : the official journal of
+  the Society for Neuroscience}{29}{27}{8839--46}.
+\newblock
+\begin{APACrefURL}
+  \url{http://apps.webofknowledge.com/full{\_}record.do?product=UA{\&}search{\_}mode=GeneralSearch{\&}qid=10{\&}SID=3CC4DqhjRPdq9lHjsbM{\&}page=1{\&}doc=5{\&}cacheurlFromRightClick=no}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1523/JNEUROSCI.5319-08.2009} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hardisty%
 , Appelt%
 \BCBL {}\ \BBA {} Weber%
@@ -61,6 +99,43 @@ Hardisty, D\BPBI J.%
 \APACjournalVolNumPages{Management Science}{53}{}{160}.
 \newblock
 \begin{APACrefDOI} \doi{10.1017/CBO9781107415324.004} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Johnson%
+, Camerer%
+, Sen%
+\BCBL {}\ \BBA {} Rymon%
+}{%
+Johnson%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2002}}%
+}]{%
+Johnson2002}
+\APACinsertmetastar {%
+Johnson2002}%
+\begin{APACrefauthors}%
+Johnson, E\BPBI J.%
+, Camerer, C.%
+, Sen, S.%
+\BCBL {}\ \BBA {} Rymon, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{may}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Detecting Failures of Backward Induction: Monitoring
+  Information Search in Sequential Bargaining}} {{Detecting Failures of
+  Backward Induction: Monitoring Information Search in Sequential
+  Bargaining}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Economic Theory}{104}{1}{16--47}.
+\newblock
+\begin{APACrefURL}
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0022053101928509}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1006/jeth.2001.2850} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
