@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.6)  15 DEC 2015 11:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.6)  15 DEC 2015 12:43
 entering extended mode
 **paperintro.tex
 (C:\git_repositories\timeratios\paper\paperintro.tex
@@ -146,26 +146,77 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
 )
-(C:\git_repositories\timeratios\paper\paperintro.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 13.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 13
-.
+(C:\Users\DanWall\AppData\Roaming\MiKTeX\2.9\tex\latex\rotating\rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count94
+\rotFPtop=\skip48
+\rotFPbot=\skip49
+\rot@float@box=\box26
+\rot@mess@toks=\toks15
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count95
+\Gm@cntv=\count96
+\c@Gm@tempcnt=\count97
+\Gm@bindingoffset=\dimen125
+\Gm@wd@mp=\dimen126
+\Gm@odd@mp=\dimen127
+\Gm@even@mp=\dimen128
+\Gm@layoutwidth=\dimen129
+\Gm@layoutheight=\dimen130
+\Gm@layouthoffset=\dimen131
+\Gm@layoutvoffset=\dimen132
+\Gm@dimlist=\toks16
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+)
+(C:\git_repositories\timeratios\paper\paperintro.aux
+
+LaTeX Warning: Label `tab:stimuli' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 18
+.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-\c@maskedRefs=\count94
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+\c@maskedRefs=\count98
 
 (C:\Users\DanWall\AppData\Roaming\MiKTeX\2.9\tex\latex\apacite\english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
@@ -174,55 +225,107 @@ LaTeX Info: Redefining \BHBI on input line 130.
 )
 (C:\Users\DanWall\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count95
-\scratchdimen=\dimen125
-\scratchbox=\box26
-\nofMPsegments=\count96
-\nofMParguments=\count97
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count98
-\MPscratchDim=\dimen126
-\MPnumerator=\count99
-\makeMPintoPDFobject=\count100
-\everyMPtoPDFconversion=\toks16
+\scratchcounter=\count99
+\scratchdimen=\dimen133
+\scratchbox=\box27
+\nofMPsegments=\count100
+\nofMParguments=\count101
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen134
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
+\everyMPtoPDFconversion=\toks18
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 15
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 20
 .
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptmcm.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptmcm.fd"
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 15
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 20
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptmcm.fd"
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 15
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 20
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxpsycm.fd"
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
  [1
 
-{C:/Users/DanWall/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+{C:/Users/DanWall/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
- [3] [4]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
+ [2] [3]
+<Stimuli_For_Study.pdf, id=18, 845.1575pt x 597.23125pt>
+File: Stimuli_For_Study.pdf Graphic file (type pdf)
+
+<use Stimuli_For_Study.pdf>
+Package pdftex.def Info: Stimuli_For_Study.pdf used on input line 187.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+
+Overfull \hbox (194.72543pt too wide) in paragraph at lines 187--188
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 149.47476pt on input line 188.
+
+[4 <C:/git_repositories/timeratios/paper/Stimuli_For_Study.pdf, page is rotated
+ 90 degrees>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
@@ -232,90 +335,37 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [5]
-
-LaTeX Warning: Citation `@Toubia2014' undefined on input line 253.
+ [5
 
 
-Overfull \hbox (10.6627pt too wide) in paragraph at lines 260--261
-[]\OT1/ptm/m/n/10 Using this for-mula we get the fol-low-ing prob-a-bil-ity of 
-choos-ing larger later $[] \OT1/ptmcm/m/n/10 =$
- []
+]
 
-[6] [7] [8] [9] [10] [11] [12]
-(C:\git_repositories\timeratios\paper\paperintro.bbl
-Underfull \hbox (badness 1048) in paragraph at lines 48--65
-[]\OT1/ptm/m/n/10 Hardisty, D. J., & Pf-ef-fer, J.  (2015).  In-tertem-po-ral U
-n-cer-tainty Avoid-ance:
- []
+LaTeX Warning: Citation `@Toubia2014' undefined on input line 266.
 
+[6] [7] [8] [9] [10] (C:\git_repositories\timeratios\paper\paperintro.bbl
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ê in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ê in font ptmr7t!
-
-Underfull \hbox (badness 2529) in paragraph at lines 189--211
-\OT1/pcr/m/n/10 http://pss.sagepub.com/lookup/doi/10.1177/0956797615572232   \O
-T1/ptm/m/n/10 doi:
- []
-
-[13]
-Underfull \hbox (badness 2903) in paragraph at lines 279--300
-[]\OT1/ptm/m/n/10 Read, D., Fred-er-ick, S., Orsel, B., & Rah-man, J.  (2005, s
-ep).  Four
- []
-
-
-Underfull \hbox (badness 3525) in paragraph at lines 279--300
-\OT1/ptm/m/n/10 Score and Seven Years from Now: The Date/Delay Ef-fect in Tem-p
-o-ral
- []
-
-
-Underfull \hbox (badness 3354) in paragraph at lines 279--300
-\OT1/ptm/m/n/10 Dis-count-ing.  \OT1/ptm/m/it/10 Man-age-ment Sci-ence\OT1/ptm/
-m/n/10 , \OT1/ptm/m/it/10 51\OT1/ptm/m/n/10 (9), 1326--1335.  Re-trieved from
- []
-
-
-Underfull \hbox (badness 1325) in paragraph at lines 314--334
-[]\OT1/ptm/m/n/10 Read, D., Fred-er-ick, S., & Scholten, M.  (2013, mar).  DRIF
-T: an anal-y-
- []
-
-
-Underfull \hbox (badness 1199) in paragraph at lines 314--334
-\OT1/ptm/m/it/10 chol-ogy. Learn-ing, mem-ory, and cog-ni-tion\OT1/ptm/m/n/10 ,
- \OT1/ptm/m/it/10 39\OT1/ptm/m/n/10 (2), 573--88.  Re-trieved from
- []
-
-
-Underfull \hbox (badness 6477) in paragraph at lines 348--366
-[]\OT1/ptm/m/n/10 Scholten, M., & Read, D.  (2006).  Dis-count-ing by in-ter-va
-ls : a
- []
-
-
-Underfull \hbox (badness 3000) in paragraph at lines 348--366
-\OT1/ptm/m/n/10 gen-er-al-ized model of in-tertem-po-ral choice. (May 2015).  R
-e-trieved from
- []
-
-) [14] (C:\git_repositories\timeratios\paper\paperintro.aux)
+)
+[11] (C:\git_repositories\timeratios\paper\paperintro.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 3038 strings out of 493921
- 45561 string characters out of 3147277
- 108640 words of memory out of 3000000
- 6315 multiletter control sequences out of 15000+200000
+ 3673 strings out of 493921
+ 55067 string characters out of 3147277
+ 120072 words of memory out of 3000000
+ 6919 multiletter control sequences out of 15000+200000
  39194 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,9n,38p,598b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,10n,38p,598b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -325,9 +375,9 @@ ier/ucrr8a.pfb><C:/Users/DanWall/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/sym
 bol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperintro.pdf (14 pages, 138458 bytes).
+Output written on paperintro.pdf (11 pages, 153404 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
