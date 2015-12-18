@@ -79,14 +79,48 @@ ggplot(eff_df, aes(x = ratcng, y = fit)) +
   geom_errorbar(aes(ymin = lower, ymax = upper))
 
 
-# now lets look at the intertemporal choices
+#### now let's look at pairs of choices
+
+dissc1 <- dissc %>%
+  mutate(id_pair = ifelse(id > 6, id - 6, id))
+
+
+# plot it
+diss1_sum <- dissc1 %>%
+  group_by(ratcng, id_pair) %>%
+  summarise(mean_dissdiff = mean(diss_diff, na.rm=TRUE),
+            se_dissdiff = std.error(diss_diff, na.rm=TRUE)) %>%
+  mutate(lower = mean_dissdiff - 1.96*se_dissdiff,
+         upper = mean_dissdiff + 1.96*se_dissdiff)
+
+ggplot(diss1_sum, aes(x = id_pair, y = mean_dissdiff, fill = ratcng, color = ratcng)) +
+  geom_bar(stat="identity", position = "dodge") +
+  geom_errorbar(aes(ymin = lower, ymax = upper), position = "dodge")
+
+
+# do t tests
+diss_t_tests <- dissc1 %>%
+  group_by(id_pair) %>%
+  do(tidy(t.test(diss_diff ~ ratcng, data = .)))
+
+
+
+##### now lets look at the intertemporal choices #####
 itc <- timerat[, str_detect(names(timerat), "^(responseid|itc\\d+_\\d+)")] %>%
   melt(id = "responseid") %>%
   filter(!(is.na(value))) %>%
   mutate(ss_time = str_extract(variable, "\\d+"),
          ll_time = str_extract(variable, "\\d+$")) %>%
   group_by(responseid) %>%
-    merge(diss_id, by = c("ss_time", "ll_time"))
+    merge(diss_id, by = c("ss_time", "ll_time")) %>%
+  mutate(value = factor(value),
+         diss_set = factor(diss_set),
+         delayed = factor(delayed),
+         id_pair = ifelse(id > 6, id - 6, id),
+         ratcng = ifelse(diss_set == 1, "small",
+                         ifelse(diss_set == 2, "large", NA)) %>%
+           factor)
+
   
 #summarise and plot the data
 itc_sum <- itc %>%
@@ -110,10 +144,14 @@ ggplot(itc_sum,
   
 
 # now lets run a model on this
-itc <- itc %>%
-  mutate(value = factor(value),
-         diss_set = factor(diss_set),
-         delayed = factor(delayed))
+# itc <- itc %>%
+#   mutate(value = factor(value),
+#          diss_set = factor(diss_set),
+#          delayed = factor(delayed),
+#          id_pair = ifelse(id > 6, id - 6, id),
+#          ratcng = ifelse(diss_set == 1, "small",
+#                          ifelse(diss_set == 2, "large", NA)) %>%
+#            factor)
 
 itc_lmer <- glmer(value ~ diss_set * delayed + (1|responseid),
                   itc, family = "binomial")
@@ -130,6 +168,70 @@ ggplot(itc_eff, aes(x = diss_set, y = fit, group = delayed,
   geom_errorbar(position = "dodge") +
   ylab("Logistic Regression Coefficient")
 
+# now look at each unique id pair
 
+# get summaries for each id
+
+itc_sum_id <- itc %>%
+  group_by(ratcng, delayed, id_pair) %>%
+  summarise(n_ll = sum(value == "2"),
+            n_tot = n()) %>%
+  mutate(per_ll = n_ll/n_tot) %>%
+  group_by(ratcng, delayed, id_pair) %>%
+  do( tidy(prop.test(.$n_ll, .$n_tot))) %>%
+  ungroup %>%
+  mutate(ratcng = factor(ratcng),
+         delayed = factor(delayed),
+         id_pair = factor(id_pair, levels = 1:6))
+
+ggplot(itc_sum_id, aes(x = id_pair, y = estimate, group = delayed, fill = delayed)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymax = conf.high, ymin = conf.low), position = "dodge") +
+  facet_grid(ratcng ~ .)
+
+itc_lmers <- itc %>%
+  group_by(id_pair) %>%
+  do(tidy(glmer(value ~ delayed * ratcng + (1|responseid), data = ., family = "binomial")))
+
+itc_glms <- itc %>%
+  group_by(id_pair) %>%
+  do(tidy(glm(value ~ delayed * ratcng, data = ., family = "binomial"))) %>%
+  ungroup()%>%
+  mutate(lower = estimate + 1.96*std.error,
+         upper = estimate - 1.96*std.error,
+         id_pair = factor(id_pair, levels = 1:6))
+
+itc_glms_sub <- itc_glms %>%
+  filter(term != "(Intercept)")
+
+ggplot(itc_glms_sub, aes(x = id_pair, y = estimate, group = term,  fill = term)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymax = upper, ymin = lower), position = "dodge")
+  
+
+# omnibus glm
+all_glm <- glm(value ~ delayed * ratcng + factor(id_pair), data = itc, family = "binomial")
+
+summary(all_glm)
+
+all_int_glm <- glm(value ~ delayed * ratcng * factor(id_pair), data = itc, family = "binomial")
+
+summary(all_int_glm)
+Anova(all_int_glm, type = 3)
+
+
+# all_int_glmer <- glmer(value ~ delayed * ratcng * factor(id_pair) + (1|responseid), data = itc, family = "binomial")
+# 
+# summary(all_int_glmer)
+
+# save ids for a table later
+diss_id_c <- diss_id %>%
+  mutate(id_par = ifelse(id > 6, id - 6, id),
+         ratiochange = ifelse(diss_set == 1, "small", "large")) %>%
+  melt(id = c("id_par", "ratiochange", "delayed"), 
+       measure = c("ss_time", "ll_time")) %>%
+  dcast(id_par ~ ratiochange + delayed + variable)
+
+write.csv(diss_id_c, "diss_id_c.csv")
 
 save.image("analyzed_data/analyzed_data.Rdata")
